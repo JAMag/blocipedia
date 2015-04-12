@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'faker'
 gem 'pundit'
 gem 'figaro', '1.0'
 gem 'devise'
