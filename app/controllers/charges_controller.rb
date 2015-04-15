@@ -11,13 +11,13 @@ class ChargesController < ApplicationController
 
     charge = Stripe::Charge.create(
     customer: customer.id,
-    amount: Amount.default,
+    amount: 1_00,
     description: "BigMoney Membership - #{current_user.email}",
     currency: 'usd'
     )
 
     flash[:success] = "Thanks for all the money, #{current_user.email}! Give me more."
-    redirect_to user_path(current_user)
+    redirect_to new_wiki_path
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
